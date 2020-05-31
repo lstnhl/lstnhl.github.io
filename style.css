@@ -74,14 +74,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    overflow: hidden;
 }
 
 .intro_text{
     text-align: center;
     font-size: 5vh;
     font-weight: 100;
+    
+    flex-grow: 1;
+    
+    hyphens: auto;
 }
 
 
@@ -97,6 +99,8 @@
 
 .proj_title{
     text-align: center;
+    
+    padding: 4vh 0;
     
     font-size: 6vh;
     font-weight: 100;
