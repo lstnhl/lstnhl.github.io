@@ -107,7 +107,7 @@
 }
 
 .proj_grid{
-    display: flex;
+    display: grid;
     
     flex-wrap: wrap;
     justify-content: center;
@@ -265,7 +265,7 @@
     }
     
     .proj_item_bgr{
-        height: 40vh;
+        height: 30vh;
     }
     
     .proj_item_title{
