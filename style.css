@@ -16,7 +16,7 @@
     height: 7vh;
     padding-bottom: 0.5vh;
     
-    z-index: 1;
+    z-index: 2;
 }
 
 .header_container{
@@ -125,14 +125,11 @@
     border-radius: 0.3vh;
     background: #2f0048;
     text-align: center;
-    position: relative;
     
-    transition: transform .2s ease;
+    overflow: hidden;
 }
 
-.proj_item:hover{
-    transform: scale(1.01);
-}
+
 
 .latestproj{
     flex-basis: 100vh;
@@ -165,17 +162,49 @@
     height: 50vh;
     background-position: center;
     background-size: cover;
+    
+    transition: transform .5s ease;
 }
 
-.proj_item_bgr:after{
-    content: '';
-    background-image: url(assets/img/lnk.svg);
-    background-size: cover;
+.proj_item_bgr:before{
+    content: 'Перейти';
     display: block;
+    background: #fff;
+    text-decoration: none;
+    height: 0vh;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 2;
+    
+    color: #000;
+    
+    transition: transform .5s ease, height .5s ease;
+}
+
+.proj_item_bgr:hover{
+    transform: translateY(5vh);
+}
+
+.proj_item_bgr:hover:before{
+    transform: translateY(-5vh);
+    height: 5vh;
+}
+
+
+/* FOOTER */
+
+
+footer{
+    background: #160022;
+    padding: 3vh 0;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 100;
 }
 
 
 /* ADAPTIVE */
+
 
 @media (max-width: 800px){
     .header_container{
@@ -236,38 +265,29 @@
     }
 }
 
-@media (max-width: 575px){
-    .header_btn{
-        font-size: 2vh;
-    }
-    
+@media (max-width: 450px){
     .intro_text{
-        font-size: 4vh;
+        font-size: 4.3vh;
     }
-    
+
+    .latestproj{
+        grid-column: 1 / 2;
+    }
+
     .proj_grid{
-        
         grid-template-columns: 1fr;
+        grid-gap: 0;
     }
-    
+
     .proj_grid > div:nth-child(even){
         background: #3e0055;
     }
-    
-    .proj_item{
-        flex-basis: 40vh;
-        margin-bottom: 2vh;
-    }
-    
-    .latestproj{
-        flex-basis: 53vh;
-        grid-column: 1 / 2;
-    }
-    
+
     .proj_item_bgr{
-        height: 30vh;
+        margin: 0 auto 4vh;
+        width: 30vh;
     }
-    
+
     .proj_item_title{
         padding-top: 2.1vh;
     }
