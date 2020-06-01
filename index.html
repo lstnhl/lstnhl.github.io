@@ -7,9 +7,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;700;800&display=swap" rel="stylesheet"> 
     <link rel="icon" href="favicon.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/script/device.js"></script>
 </head>
 <body>
-    <header class="header">
+   
+    <header class="header" id="header">
         <div class="header_container">
             <div class="logo">LSTNHL</div>
             <a class="header_btn" target="_blank" href="https://www.youtube.com/user/countersem/">Ютуб</a>
@@ -19,7 +22,9 @@
     </header>
     
     <section class="intro">
-       <video autoplay loop src="assets/bgr.webm"></video>
+       <video autoplay loop id="video_bgr">
+           <source src="assets/bgr.webm" type='video/webm; codecs="vp9, vorbis"' />
+       </video>
         <div class="intro_text">Ластинхел б** на бите</div>
     </section>
     
@@ -101,5 +106,20 @@
         </div>
     </section>
     <footer>Учите, дети, CSS!</footer>
+    
+    <script>
+        if(!device.desktop()) document.getElementById("video_bgr").style.display = "none";
+        
+        var hdr = document.getElementById("header")
+        
+        window.addEventListener('scroll', function() {
+            if (pageYOffset > 300) hdr.animate({
+                    background: "#1d002a",
+                }, 500, "linear", hdr.style.background = "#1d002a");
+            else hdr.animate({
+                    background: "none",
+                }, 500, "linear", hdr.style.background = "none");
+        });
+    </script>
 </body>
 </html>
