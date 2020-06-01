@@ -108,18 +108,22 @@
     <footer>Учите, дети, CSS!</footer>
     
     <script>
-        if(!device.desktop()) document.getElementById("video_bgr").style.display = "none";
+        const hdr = document.getElementById("header")
         
-        var hdr = document.getElementById("header")
-        
-        window.addEventListener('scroll', function() {
-            if (pageYOffset > 300) hdr.animate({
-                    background: "#1d002a",
-                }, 500, "linear", hdr.style.background = "#1d002a");
-            else hdr.animate({
-                    background: "none",
-                }, 500, "linear", hdr.style.background = "none");
-        });
+        if(!device.desktop()){
+            document.getElementById("video_bgr").style.display = "none";
+            hdr.style.background = "#1d002a"
+        }
+        else{
+            window.addEventListener('scroll', function() {
+                if (pageYOffset > 300) hdr.animate({
+                        background: "#1d002a",
+                    }, 500, "linear", hdr.style.background = "#1d002a");
+                else hdr.animate({
+                        background: "none",
+                    }, 500, "linear", hdr.style.background = "none");
+            });
+        }
     </script>
 </body>
 </html>
