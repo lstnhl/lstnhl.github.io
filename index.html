@@ -111,7 +111,7 @@
         const hdr = document.getElementById("header")
         
         if(!device.desktop()){
-            document.getElementById("video_bgr").style.display = "none";
+            document.getElementById("video_bgr").remove();
             hdr.style.background = "#1d002a"
         }
         else{
