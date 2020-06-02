@@ -219,7 +219,7 @@ footer{
 
 
 
-@media (max-width: 800px){
+@media (max-width: 780px){
     .header_container{
         width: inherit;
         justify-content: center;
@@ -241,6 +241,7 @@ footer{
     
     .proj_grid{
         grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-gap: 1.8vh;
     }
     
     .proj_item_bgr{
@@ -264,13 +265,14 @@ footer{
     }
 }
 
-@media (max-width: 450px){
+@media (max-width: 415px){
     .intro_text{
         font-size: 4.3vh;
     }
     
     .proj_grid{
         grid-template-columns: repeat(auto-fit, minmax(21vh, 1fr));
+        grid-gap: 1.4vh;
     }
     
     .proj_item_title{
@@ -282,7 +284,7 @@ footer{
     }
     
     .proj_item_bgr{
-        height: 25vh;
+        height: 27vh;
     }
     
     .latestproj > .proj_item_title{
