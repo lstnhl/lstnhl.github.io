@@ -121,9 +121,6 @@
 .proj_grid{
     display: grid;
     
-    flex-wrap: wrap;
-    justify-content: center;
-    
     grid-template-columns: repeat(auto-fit, minmax(56vh, 1fr));
     grid-gap: 3vh;
     align-items: center;
@@ -132,8 +129,6 @@
 }
 
 .proj_item{
-    flex-basis: 50vh;
-    
     border-radius: 0.3vh;
     background: #2f0048;
     text-align: center;
@@ -141,19 +136,23 @@
     overflow: hidden;
 }
 
-
-
-.latestproj{
-    flex-basis: 100vh;
-    
-    background: #4a005c;
-    grid-column: 1 / 3;
+.proj_grid > div:nth-child(even){
+    background: #3e0055;
 }
 
 .proj_item_title{
     padding: 1vh;
     font-size: 5vh;
     font-weight: 600;
+}
+
+.latestproj{
+    background: #610069;
+    grid-column: 1 / 3;
+}
+
+.latestproj > .proj_item_title{
+    font-size: 8vh;
 }
 
 .proj_item_title .name{
@@ -244,14 +243,6 @@ footer{
         grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
     }
     
-    .proj_item{
-        flex-basis: 40vh;
-    }
-    
-    .latestproj{
-        flex-basis: 83vh;
-    }
-    
     .proj_item_bgr{
         height: 30vh;
     }
@@ -267,15 +258,9 @@ footer{
     .proj_item_date{
         font-size: 1.5vh;
     }
-}
-
-@media (max-width: 645px) {
-    .proj_item{
-        flex-basis: 35vh;
-    }
     
-    .latestproj{
-        flex-basis: 73vh;
+    .latestproj > .proj_item_title{
+        font-size: 5vh;
     }
 }
 
@@ -283,26 +268,24 @@ footer{
     .intro_text{
         font-size: 4.3vh;
     }
-
-    .latestproj{
-        grid-column: 1 / 2;
-    }
-
+    
     .proj_grid{
-        grid-template-columns: 1fr;
-        grid-gap: 0;
+        grid-template-columns: repeat(auto-fit, minmax(21vh, 1fr));
     }
-
-    .proj_grid > div:nth-child(even){
-        background: #3e0055;
-    }
-
-    .proj_item_bgr{
-        margin: 0 auto 4vh;
-        width: 30vh;
-    }
-
+    
     .proj_item_title{
-        padding-top: 2.1vh;
+        font-size: 2vh;
+    }
+
+    .proj_item_title .name{
+        font-size: 1.2vh;
+    }
+    
+    .proj_item_bgr{
+        height: 25vh;
+    }
+    
+    .latestproj > .proj_item_title{
+        font-size: 4.5vh;
     }
 }
